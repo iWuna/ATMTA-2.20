@@ -12,8 +12,8 @@
 	color = "#FFFF00"
 	shockbull = TRUE
 	nodamage = 1
-	stun = 1
-	weaken = 1
+	stun = 3
+	weaken = 3
 	stamina = 33
 	stutter = 5
 	jitter = 20

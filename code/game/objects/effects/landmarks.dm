@@ -330,3 +330,7 @@
 
 /obj/effect/landmark/free_golem_spawn
 	name = "Free Golem Spawn Point"
+
+/obj/effect/landmark/start/classd
+	name = "D-Class Prisoner"
+	icon_state = "DClass"

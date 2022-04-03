@@ -18,6 +18,7 @@ Note: Must be placed west/left of and R&D console to function.
 	categories = list(
 								"Bluespace",
 								"Equipment",
+								"Computer Parts",
 								"Janitorial",
 								"Medical",
 								"Mining",

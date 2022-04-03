@@ -26,8 +26,8 @@
 
 
 /mob/living/simple_animal/parrot
-	name = "\improper Parrot"
-	desc = "The parrot squaks, \"It's a Parrot! BAWWK!\""
+	name = "\improper Папугай"
+	desc = "Папуай сквакочет, \"Это папугай, БВАААК!!!\""
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "parrot_fly"
 	icon_living = "parrot_fly"
@@ -36,13 +36,16 @@
 	can_collar = 1
 
 	var/list/clean_speak = list(
-		"Hi",
-		"Hello!",
-		"Cracker?",
-		"BAWWWWK george mellons griffing me")
-	speak_emote = list("squawks","says","yells")
-	emote_hear = list("squawks","bawks")
-	emote_see = list("flutters its wings")
+		"Привет",
+		"Дарова!",
+		"Крекккерр?",
+		"БУАААК винсонт антдар грифонит миня!",
+		"БУАААК ХОЧУ ПИСЕК!",
+		"СМОЛ УМНЯША")
+
+	speak_emote = list("квакочет","говорит","кричит")
+	emote_hear = list("скрипит","пищит")
+	emote_see = list("машет крыльями")
 
 	speak_chance = 1//1% (1 in 100) chance every tick; So about once per 150 seconds, assuming an average tick is 1.5s
 	turns_per_move = 5
@@ -258,6 +261,13 @@
 			parrot_state = PARROT_SWOOP | PARROT_FLEE
 			icon_state = "parrot_fly"
 			drop_held_item(0)
+
+	if(!stat && !client && !istype(O, /obj/item/cyberpapugkit))
+		if(parrot_state == PARROT_PERCH)
+			parrot_sleep_dur = parrot_sleep_max
+			sleep(40)
+			playsound(loc, 'sound/voice/liveagain.ogg', 75, 1)
+			icon = 'icons/mob/cyber_animal.dmi'
 	return
 
 //Bullets
@@ -861,3 +871,9 @@
 	if(!message || stat)
 		return
 	speech_buffer.Add(message)
+
+/obj/item/cyberpapugkit
+	name = "Cybernization kit"
+	desc = "Turn your lovely animal into machine beast."
+	icon = 'icons/obj/custom_items.dmi'
+	icon_state = "scifikit"
