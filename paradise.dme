@@ -2630,6 +2630,7 @@
 #include "hyntatmta\code\modules\owls\portableowl.dm"
 #include "hyntatmta\code\modules\reagents\reagent_containers\food\drinks.dm"
 #include "hyntatmta\code\modules\reagents\reagent_containers\food\snacks.dm"
+#include "hyntatmta\merens\clownlink.dm"
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
 // END_INCLUDE
