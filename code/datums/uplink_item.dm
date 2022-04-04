@@ -162,7 +162,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/jobspecific
 	category = "Job Specific Tools"
 	cant_discount = TRUE
-	excludefrom = list(UPLINK_TYPE_NUCLEAR, UPLINK_TYPE_SST, UPLINK_TYPE_CLOWN) // Stops the job specific category appearing for nukies
+	excludefrom = list(UPLINK_TYPE_NUCLEAR, UPLINK_TYPE_SST) // Stops the job specific category appearing for nukies
 
 //Clown
 /datum/uplink_item/jobspecific/clowngrenade
@@ -480,7 +480,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/dangerous
 	category = "Highly Visible and Dangerous Weapons"
-	excludefrom = list(UPLINK_TYPE_CLOWN)
 
 /datum/uplink_item/dangerous/pistol
 	name = "FK-69 Pistol"
@@ -548,7 +547,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 8
 	surplus = 0
 	cant_discount = TRUE
-	excludefrom = list(UPLINK_TYPE_NUCLEAR, UPLINK_TYPE_SST, UPLINK_TYPE_CLOWN)
+	excludefrom = list(UPLINK_TYPE_NUCLEAR, UPLINK_TYPE_SST)
 
 /datum/uplink_item/dangerous/crossbow
 	name = "Energy Crossbow"
@@ -556,7 +555,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	reference = "EC"
 	item = /obj/item/gun/energy/kinetic_accelerator/crossbow
 	cost = 9
-	excludefrom = list(UPLINK_TYPE_NUCLEAR, UPLINK_TYPE_SST, UPLINK_TYPE_CLOWN)
+	excludefrom = list(UPLINK_TYPE_NUCLEAR, UPLINK_TYPE_SST)
 	surplus = 50
 
 /datum/uplink_item/dangerous/flamethrower
@@ -599,7 +598,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	category = "Support and Mechanized Exosuits"
 	surplus = 0
 	uplinktypes = list(UPLINK_TYPE_NUCLEAR, UPLINK_TYPE_SST)
-	excludefrom = list(UPLINK_TYPE_CLOWN)
 
 /datum/uplink_item/support/gygax
 	name = "Gygax Exosuit"
@@ -626,7 +624,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 25
 	refundable = TRUE
 	cant_discount = TRUE
-	excludefrom = list(UPLINK_TYPE_CLOWN)
 
 /datum/uplink_item/support/reinforcement/assault_borg
 	name = "Syndicate Assault Cyborg"
@@ -690,7 +687,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/ammo
 	category = "Ammunition"
 	surplus = 40
-	excludefrom = list(UPLINK_TYPE_CLOWN)
 
 /datum/uplink_item/ammo/pistol
 	name = "Stechkin - 10mm Magazine"
@@ -869,7 +865,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/stealthy_weapons
 	category = "Stealthy and Inconspicuous Weapons"
-	excludefrom = list(UPLINK_TYPE_CLOWN)
 
 /datum/uplink_item/stealthy_weapons/garrote
 	name = "Fiber Wire Garrote"
@@ -887,7 +882,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	reference = "SCS"
 	item = /obj/item/sleeping_carp_scroll
 	cost = 16
-	excludefrom = list(UPLINK_TYPE_NUCLEAR, UPLINK_TYPE_SST, UPLINK_TYPE_CLOWN)
+	excludefrom = list(UPLINK_TYPE_NUCLEAR, UPLINK_TYPE_SST)
 
 	refundable = TRUE
 	cant_discount = TRUE
@@ -930,7 +925,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	reference = "SP"
 	item = /obj/item/pen/sleepy
 	cost = 8
-	excludefrom = list(UPLINK_TYPE_NUCLEAR, UPLINK_TYPE_SST, UPLINK_TYPE_CLOWN)
+	excludefrom = list(UPLINK_TYPE_NUCLEAR, UPLINK_TYPE_SST)
 
 /datum/uplink_item/stealthy_weapons/foampistol
 	name = "Toy Gun (with Stun Darts)"
@@ -991,7 +986,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/explosives
 	category = "Grenades and Explosives"
-	excludefrom = list(UPLINK_TYPE_CLOWN)
 
 /datum/uplink_item/explosives/plastic_explosives
 	name = "Composition C-4"
@@ -1123,7 +1117,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/stealthy_tools
 	category = "Stealth and Camouflage Items"
-	excludefrom = list(UPLINK_TYPE_CLOWN)
 
 /datum/uplink_item/stealthy_tools/chameleon_stamp
 	name = "Chameleon Stamp"
@@ -1293,7 +1286,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/device_tools
 	category = "Devices and Tools"
 	abstract = 1
-	excludefrom = list(UPLINK_TYPE_CLOWN)
 
 /datum/uplink_item/device_tools/emag
 	name = "Cryptographic Sequencer"
@@ -1377,7 +1369,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/suits
 	category = "Space Suits and Hardsuits"
 	surplus = 40
-	excludefrom = list(UPLINK_TYPE_CLOWN)
 
 /datum/uplink_item/suits/space_suit
 	name = "Syndicate Space Suit"
@@ -1540,7 +1531,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/implants
 	category = "Implants"
-	excludefrom = list(UPLINK_TYPE_CLOWN)
 
 /datum/uplink_item/implants/freedom
 	name = "Freedom Implant"
@@ -1594,7 +1584,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	category = "Cybernetic Implants"
 	surplus = 0
 	uplinktypes = list(UPLINK_TYPE_NUCLEAR, UPLINK_TYPE_SST)
-	excludefrom = list(UPLINK_TYPE_CLOWN)
 
 /datum/uplink_item/cyber_implants/spawn_item(turf/loc, obj/item/uplink/U)
 	if(item)
@@ -1640,7 +1629,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/badass
 	category = "(Pointless) Badassery"
 	surplus = 0
-	excludefrom = list(UPLINK_TYPE_CLOWN)
 
 /datum/uplink_item/badass/syndiecigs
 	name = "Syndicate Smokes"
@@ -1695,7 +1683,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	category = "Bundles and Telecrystals"
 	surplus = 0
 	cant_discount = TRUE
-	excludefrom = list(UPLINK_TYPE_CLOWN)
 
 /datum/uplink_item/bundles_TC/bulldog
 	name = "Bulldog Bundle"
