@@ -1,18 +1,18 @@
 /obj/machinery/status_display/supply_display
-	name = "дисплей статуса доставки"
+	name = "Supply status display"
 	ignore_friendc = 1
 
 /obj/machinery/status_display/supply_display/update()
 	if(!..() && mode == STATUS_DISPLAY_CUSTOM)
 		if(SSshuttle.supply.mode == SHUTTLE_IDLE)
 			if(is_station_level(SSshuttle.supply.z))
-				message1 = "ГРУЗ"
-				message2 = "ГОТОВ"
+				message1 = "SUPPLY"
+				message2 = "READY"
 			else
-				message1 = "ВРЕМЯ"
+				message1 = "TIME"
 				message2 = station_time_timestamp("hh:mm")
 		else
-			message1 = "ГРУЗ"
+			message1 = "SUPPLY"
 			message2 = SSshuttle.supply.getTimerStr()
 			if(length(message2) > CHARS_PER_LINE)
 				message2 = "Error"

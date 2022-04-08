@@ -46,7 +46,7 @@ GLOBAL_LIST_INIT(statdisp_picture_colors, list(
 /obj/machinery/status_display
 	icon = 'icons/obj/status_display.dmi'
 	icon_state = "frame"
-	name = "дисплей статуса"
+	name = "status display"
 	anchored = 1
 	density = 0
 	use_power = IDLE_POWER_USE
@@ -142,7 +142,7 @@ GLOBAL_LIST_INIT(statdisp_picture_colors, list(
 				if(length(message2) > CHARS_PER_LINE)
 					message2 = "Error!"
 			else
-				message1 = "ВРЕМЯ"
+				message1 = "TIME"
 				message2 = station_time_timestamp("hh:mm")
 			update_display(message1, message2, use_warn)
 			return TRUE
@@ -170,7 +170,7 @@ GLOBAL_LIST_INIT(statdisp_picture_colors, list(
 			update_display(line1, line2)
 			return TRUE
 		if(STATUS_DISPLAY_TIME)
-			message1 = "ВРЕМЯ"
+			message1 = "TIME"
 			message2 = station_time_timestamp("hh:mm")
 			update_display(message1, message2)
 			return TRUE
