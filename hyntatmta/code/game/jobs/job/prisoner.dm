@@ -1,5 +1,5 @@
 /datum/job/prisoner
-	title = "D-Class Prisoner"
+	title = "D-Class"
 	flag = JOB_DCLASS
 	department_flag = JOBCAT_SUPPORT
 	total_positions = -1

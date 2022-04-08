@@ -1845,3 +1845,42 @@
 	throwforce = 0
 	breakouttime = 0
 	ignoresClumsy = TRUE
+
+/*
+ * dippybird
+ */
+
+/obj/item/toy/dippybird
+	name = "dippybird"
+	desc = "A bird."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "dippybird"
+	w_class = WEIGHT_CLASS_SMALL
+	var/bloody = FALSE
+	var/bird_dip = FALSE
+
+/obj/item/toy/dippybird/update_icon()
+	if(bird_dip == TRUE)
+		icon_state = "[initial(icon_state)]-on"
+	else
+		icon_state = "[initial(icon_state)]"
+
+/obj/item/toy/dippybird/attack_self(mob/user as mob)
+	to_chat(user, "<span class='notice'>You press the button on the [src].</span>")
+
+	if(!bird_dip)
+		bird_dip = TRUE
+	else
+		bird_dip = FALSE
+
+/obj/item/toy/dippybird/attackby(obj/item/B, mob/user, params)
+	if(!bloody)
+		if(istype(B, /obj/item/reagent_containers/iv_bag/blood))
+			name = "Bloody dippybird"
+			icon_state = "[initial(icon_state)]_bloody"
+			bloody = TRUE
+			to_chat(user, "<span class='notice'> You spill all bloodbag in [src]'s glass, where it all gone!? </span>")
+			playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
+			qdel(B)
+		else
+			return ..()

@@ -113,7 +113,7 @@
 		user.overlays -= image("icon"='hyntatmta/icons/mob/aura.dmi', "icon_state"="spiral")
 		cooldown = world.time + 3000
 
-/*
+
 //Sergeant Dornan's helmet
 /obj/item/clothing/head/atmta/dornan
 	name = "Sergeant's helmet"
@@ -132,55 +132,55 @@
 	else if(actiontype == /datum/action/item_action/selectphrase)
 		switch(phrase)
 			if(1)
-				to_chat(user, "<span class='notice'>You set the phrase to: �� ����� ��������� ������� ����������!</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Не сметь обсуждать приказы начальства!</span>")
 				phrase = 2
 			if(2)
-				to_chat(user, "<span class='notice'>You set the phrase to: ����� ������� - ������ �������!</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Скажу прыгать - будешь прыгать!</span>")
 				phrase = 3
 			if(3)
-				to_chat(user, "<span class='notice'>You set the phrase to: ���� �������?</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Ясно излагаю?</span>")
 				phrase = 4
 			if(4)
-				to_chat(user, "<span class='notice'>You set the phrase to: �������, � ����� ������?</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Думаете, Я этому поверю?</span>")
 				phrase = 5
 			if(5)
-				to_chat(user, "<span class='notice'>You set the phrase to: �� ��������� ������!</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Вы допустили потерю!</span>")
 				phrase = 6
 			if(6)
-				to_chat(user, "<span class='notice'>You set the phrase to: ��������� ����� �������!</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Стоимость будет вычтена!</span>")
 				phrase = 7
 			if(7)
-				to_chat(user, "<span class='notice'>You set the phrase to: ������� 510 ���!</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Служить 510 лет!</span>")
 				phrase = 8
 			if(8)
-				to_chat(user, "<span class='notice'>You set the phrase to: ����� �������?</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Такой вариант?</span>")
 				phrase = 9
 			if(9)
-				to_chat(user, "<span class='notice'>You set the phrase to: ����� � ����!</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Прочь с глаз!</span>")
 				phrase = 10
 			if(10)
-				to_chat(user, "<span class='notice'>You set the phrase to: �� �� �����.</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Не по форме.</span>")
 				phrase = 11
 			if(11)
-				to_chat(user, "<span class='notice'>You set the phrase to: ���������?!</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Понимаешь?!</span>")
 				phrase = 12
 			if(12)
-				to_chat(user, "<span class='notice'>You set the phrase to: �� ���������!</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: НЕ НРАВИШЬСЯ!</span>")
 				phrase = 13
 			if(13)
-				to_chat(user, "<span class='notice'>You set the phrase to: � ��� �� ���!</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Я вам не сэр!</span>")
 				phrase = 14
 			if(14)
-				to_chat(user, "<span class='notice'>You set the phrase to: ��� �����?</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Что такое?</span>")
 				phrase = 15
 			if(15)
-				to_chat(user, "<span class='notice'>You set the phrase to: �� �� �����.</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Не на посту.</span>")
 				phrase = 16
 			if(16)
-				to_chat(user, "<span class='notice'>You set the phrase to: ������.</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: Опасны.</span>")
 				phrase = 17
 			if(17)
-				to_chat(user, "<span class='notice'>You set the phrase to: �����!</span>")
+				to_chat(user, "<span class='notice'>You set the phrase to: И-ДИ-ОТ!</span>")
 				phrase = 1
 
 
@@ -197,62 +197,60 @@
 	if(cooldown < world.time - 50)
 		switch(phrase)	//VI DOPUSTILI CKOPIROVANIE KODA!
 			if(1)				// VI BUDETE ADMINIT DO TEH POR POEKA VAM NE ISPOLNITSA 510 LET!
-				phrase_text = sanitize_local("�����!!!")
+				phrase_text = sanitize("И-ДИ-ОТ!!!")
 				phrase_sound = pick("idiot0", "idiot1")
 			if(2)
-				phrase_text = sanitize_local("�� ����� ��������� ������� ����������!!")
+				phrase_text = sanitize("Не сметь обсуждать приказы начальства!!")
 				phrase_sound = "idiot2"
 			if(3)
-				phrase_text = sanitize_local("����� ������� - ������ �������! ����� ������� - ������ �������! ����� ������� �� ������ - ������ ��� ����������!!")
+				phrase_text = sanitize("Скажу прыгать - будешь прыгать! Скажу драться - будешь драться! Скажу умереть за родину - умрешь без разговоров!!")
 				phrase_sound = "idiot3"
 			if(4)
-				phrase_text = sanitize_local("� ���� �������?!")
+				phrase_text = sanitize("Я ясно излагаю?!")
 				phrase_sound = "idiot4"
 			if(5)
-				phrase_text = sanitize_local("��� ���? � �� �������, � ����� ������, ������?!")
+				phrase_text = sanitize("Вот как? И вы думаете, я этому поверю, салага?!")
 				phrase_sound = "idiot5"
 			if(6)
-				phrase_text = sanitize_local("�� ��������� ������ �������������� ��������������!")
+				phrase_text = sanitize("Вы допустили потерю дорогостоящего обмундирования!")
 				phrase_sound = "idiot6"
 			if(7)
-				phrase_text = sanitize_local("��� ��������� ����� ������� �� ������ ���������!!")
+				phrase_text = sanitize("Его стоимость будет вычтена из вашего жалования!!")
 				phrase_sound = "idiot7"
 			if(8)
-				phrase_text = sanitize_local("� �� ������ ������� ���� ��� �� ���������� ������� ������ ���!!!")
+				phrase_text = sanitize("И вы будете служить пока вам не исполнится ПЯТЬСОТ ДЕСЯТЬ ЛЕТ!!!")
 				phrase_sound = "idiot8"
 			if(9)
-				phrase_text = sanitize_local("�������� ����� �������, ������?!")
+				phrase_text = sanitize("Нравится такой вариант, солдат?!")
 				phrase_sound = "idiot9"
 			if(10)
-				phrase_text = sanitize_local("� �� ����� � ���� ����!")
+				phrase_text = sanitize("А ну прочь с глаз моих!")
 				phrase_sound = "idiot10"
 			if(11)
-				phrase_text = sanitize_local("�� ����� �� �� �����, ������!")
+				phrase_text = sanitize("Вы одеты не по форме, солдат!")
 				phrase_sound = "idiot11"
 			if(12)
-				phrase_text = sanitize_local("�� ���� ��-��-��-���?!")
+				phrase_text = sanitize("Ты меня по-ни-ма-ешь?!")
 				phrase_sound = "idiot12"
 			if(13)
-				phrase_text = sanitize_local("�� ��� �� ���������, �������?!")
+				phrase_text = sanitize("Ты мне не нравишься, понятно?!")
 				phrase_sound = "idiot13"
 			if(14)
-				phrase_text = sanitize_local("� ��� �� ���!")
+				phrase_text = sanitize("Я вам не сэр!")
 				phrase_sound = "idiot14"
 			if(15)
-				phrase_text = sanitize_local("��� �����? ��� ���� �����, ������?")
+				phrase_text = sanitize("Что такое? Что тебе нужно, салага?")
 				phrase_sound = "idiot15"
 			if(16)
-				phrase_text = sanitize_local("��� ��� ����� ���� �� �� �����, � ��� ����� ����� �������� ���� � ����� ����������� �����!")
+				phrase_text = sanitize("Еще раз увижу тебя не на посту, и это будет самый грустный день в твоей коротенькой жизни!")
 				phrase_sound = "idiot16"
 			if(17)
-				phrase_text = sanitize_local("�� ������ ��� ���� ���! ������ � ���� ����� ���������!")
+				phrase_text = sanitize("Вы опасны для всех нас! Сейчас с этим будет покончено!")
 				phrase_sound = "idiot17"
 
 		usr.visible_message("[usr] screams ferociously: <font color='red' size='4'><b>[phrase_text]</b></font>")
 		playsound(src.loc, "sound/voice/dornan/[phrase_sound].ogg", 80, 0, 4)
 		cooldown = world.time
-
-*/
 
 // SLASTENA
 /obj/item/clothing/under/atmta/slastena

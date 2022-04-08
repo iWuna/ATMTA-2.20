@@ -13,6 +13,11 @@
 	var/always_availible = TRUE //Set to FALSE if it needs to be learned first.
 	var/alert_admins_on_craft = FALSE
 
+/datum/crafting_recipe/proc/check_crafting(mob/user)
+	//This proc is used for special requirements - the crafter's location or something else.
+	//Return a text with whatever went wrong if it fails. Return nothing otherwise.
+	return
+
 /datum/crafting_recipe/IED
 	name = "IED"
 	result = /obj/item/grenade/iedcasing
@@ -1051,3 +1056,15 @@
 	tools = list(TOOL_SCREWDRIVER)
 	time = 50
 	category = CAT_ROBOT
+
+/datum/crafting_recipe/noose
+	name = "Noose"
+	time = 60
+	reqs = list(/obj/item/stack/cable_coil = 15)
+	result = /obj/structure/bed/noose
+	category = CAT_MISC
+
+/datum/crafting_recipe/noose/check_crafting(mob/user)
+	var/turf/T = get_turf(user)
+	if(!(locate(/obj/structure/chair/stool) in T) && !(locate(/obj/structure/table) in T) && !(locate(/obj/structure/toilet) in T))//this will catch chairs, toilets, beds, tables and stools
+		return "you need to be standing on top of a chair, table or a toilet to make a noose"
