@@ -2630,6 +2630,9 @@
 #include "hyntatmta\code\modules\owls\portableowl.dm"
 #include "hyntatmta\code\modules\reagents\reagent_containers\food\drinks.dm"
 #include "hyntatmta\code\modules\reagents\reagent_containers\food\snacks.dm"
+#include "hyntatmta\merens\jukebox.dm"
+#include "hyntatmta\merens\jukebox_custom_music.dm"
+#include "hyntatmta\merens\jukebox_music.dm"
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
 // END_INCLUDE
