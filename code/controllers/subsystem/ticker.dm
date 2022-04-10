@@ -63,8 +63,7 @@ SUBSYSTEM_DEF(ticker)
 	var/real_reboot_time = 0
 
 /datum/controller/subsystem/ticker/Initialize()
-	login_music = pick('sound/music/sardukar.ogg')
-
+	login_music = pick('sound/music/clown.ogg', 'sound/music/space_oddity.ogg', 'sound/music/disco_ost.ogg')
 	return ..()
 
 

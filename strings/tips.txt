@@ -198,3 +198,4 @@ Blob structures take half damage from brute damage. Use lasers.
 You can hide paper in vents, but you have to use a screwdriver to open it first.
 While the Standard Operating Procedures aren't fully rules, they are there for safety and professional reasons.
 Killing the Wizard usually ends the round, unless they are a lich or Space Wizard Federation is RAGING.
+Донатя Саше, вы делаете билд лучше.
