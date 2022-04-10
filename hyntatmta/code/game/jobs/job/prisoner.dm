@@ -2,8 +2,8 @@
 	title = "D-Class"
 	flag = JOB_DCLASS
 	department_flag = JOBCAT_SUPPORT
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 10
+	spawn_positions = 4
 	supervisors = "security officers"
 	selection_color = "#dddddd"
 	access = list()
