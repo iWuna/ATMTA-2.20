@@ -32,6 +32,7 @@ GLOBAL_LIST_EMPTY(syndieprisonwarp)	//contractor targets go to these
 GLOBAL_LIST_EMPTY(xeno_spawn)//Aliens spawn at these.
 GLOBAL_LIST_EMPTY(ertdirector)
 GLOBAL_LIST_EMPTY(emergencyresponseteamspawn)
+GLOBAL_LIST_EMPTY(dclass)
 GLOBAL_LIST_EMPTY(tdome1)
 GLOBAL_LIST_EMPTY(tdome2)
 GLOBAL_LIST_EMPTY(team_alpha)

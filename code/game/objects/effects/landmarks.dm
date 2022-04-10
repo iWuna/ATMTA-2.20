@@ -89,6 +89,10 @@
 			GLOB.emergencyresponseteamspawn += loc
 			qdel(src)
 
+		if("D-Class")
+			GLOB.dclass += loc
+			qdel(src)
+
 		if("Syndicate Officer")
 			GLOB.syndicateofficer += loc
 			qdel(src)
