@@ -198,5 +198,5 @@
 
 /mob/living/simple_animal/hostile/statue/scp
 	icon_state = "173"
-	icon_living = "angel"
-	icon_dead = "angel"
+	icon_living = "173"
+	icon_dead = "173"
