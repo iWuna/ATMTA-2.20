@@ -774,7 +774,7 @@
 	var/altername // alternative form name
 	var/category // category name
 	var/confidential = FALSE
-	var/from // = "Научная Станция Nanotrasen &#34;Cyberiad&#34;"
+	var/from // = "Научная Станция Nanotrasen &#34;ATMTIAD&#34;"
 	var/notice = "Перед заполнением прочтите от начала до конца | Во всех PDA имеется ручка"
 	var/access = null //form visible only with appropriate access
 	paper_width = 600 //Width of the window that opens

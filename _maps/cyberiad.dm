@@ -21,10 +21,10 @@ DECLARE_LEVEL(CENTCOMM, SELFLOOPING, list(ADMIN_LEVEL, BLOCK_TELEPORT, IMPEDES_M
 DECLARE_LEVEL(MINING, SELFLOOPING, list(ORE_LEVEL, REACHABLE, STATION_CONTACT, HAS_WEATHER, AI_OK)),\
 DECLARE_LEVEL(RAMSS_TAIPAN, CROSSLINKED, list(REACHABLE, TAIPAN)))
 	#define USING_MAP_DATUM /datum/map/cyberiad
-	#define MAP_NAME "Cyberiad"
+	#define MAP_NAME "ATMTIAD"
 
 #elif !defined(MAP_OVERRIDE)
 
-	#warn a map has already been included, ignoring Cyberiad.
+	#warn a map has already been included, ignoring ATMTIAD.
 
 #endif

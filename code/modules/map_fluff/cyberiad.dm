@@ -1,9 +1,9 @@
 /datum/map/cyberiad
-	name = "Cyberiad"
-	full_name = "NSS Cyberiad"
+	name = "ATMTIAD"
+	full_name = "NSS ATMTIAD"
 
-	station_name  = "NSS Cyberiad"
-	station_short = "Cyberiad"
+	station_name  = "NSS ATMTIAD"
+	station_short = "ATMTIAD"
 	dock_name     = "NAS Trurl"
 	company_name  = "Nanotrasen"
 	company_short = "NT"

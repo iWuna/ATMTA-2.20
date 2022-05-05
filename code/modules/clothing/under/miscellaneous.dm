@@ -128,7 +128,7 @@
 	displays_id = 0
 
 /obj/item/clothing/under/rank/centcom/representative
-	desc = "Gold trim on space-black cloth, this uniform bears \"N.S.S. Cyberiad\" on the left shoulder."
+	desc = "Gold trim on space-black cloth, this uniform bears \"N.S.S. ATMTIAD\" on the left shoulder."
 	name = "\improper Formal Nanotrasen Representative's Uniform"
 	icon_state = "officer"
 	item_state = "g_suit"
@@ -140,7 +140,7 @@
 	desc = "Gold trim on space-black cloth, this uniform bears [station_name()] on the left shoulder."
 
 /obj/item/clothing/under/rank/centcom/magistrate
-	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Magistrate\" and bears \"N.S.S. Cyberiad\" on the left shoulder."
+	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Magistrate\" and bears \"N.S.S. ATMTIAD\" on the left shoulder."
 	name = "\improper Formal Magistrate's Uniform"
 	icon_state = "officer"
 	item_state = "g_suit"

@@ -190,9 +190,17 @@
 	return
 
 /obj/item/gun/projectile/revolver/mateba
-	name = "\improper Unica 6 auto-revolver"
-	desc = "A retro high-powered autorevolver typically used by officers of the New Russia military. Uses .357 ammo."	//>10mm hole >.357
-	icon_state = "mateba"
+	name = "\improper Unica 7 auto-revolver"
+	desc = "A retro high-powered autorevolver of new generation. Uses .357 ammo."
+	icon_state = "unica7"
+	unique_reskin = TRUE
+
+/obj/item/gun/projectile/revolver/mateba/New()
+	..()
+	options["Basic"] = "unica7"
+	options["Camo"] = "unica7_camo"
+	options["Gold"] = "unica7_gold"
+	options["Cancel"] = null
 
 /obj/item/gun/projectile/revolver/golden
 	name = "\improper Golden revolver"
