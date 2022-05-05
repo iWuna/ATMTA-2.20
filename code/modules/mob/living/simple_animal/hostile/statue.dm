@@ -195,3 +195,8 @@
 	. = ..()
 	if(can_be_seen(loc))
 		return 1
+
+/mob/living/simple_animal/hostile/statue/scp
+	icon_state = "173"
+	icon_living = "angel"
+	icon_dead = "angel"
