@@ -671,6 +671,39 @@
 	air_update_turf()
 	return
 
+/obj/machinery/disposal/wall
+	name = "wall disposal unit"
+	desc = "A pneumatic waste disposal unit."
+	icon_state = "disposal_wall"
+	anchored = TRUE
+	density = FALSE
+
+/obj/machinery/disposal/wall/update()
+	overlays.Cut()
+	if(stat & BROKEN)
+		icon_state = "disposal_wall-broken"
+		mode = 0
+		flush = 0
+		return
+
+	// flush handle
+	if(flush)
+		overlays += image('icons/obj/pipes/disposal.dmi', "disposal_wall-handle")
+
+	// only handle is shown if no power
+	if(stat & NOPOWER || mode == -1)
+		return
+
+	// 	check for items in disposal - occupied light
+	if(contents.len > 0)
+		overlays += image('icons/obj/pipes/disposal.dmi', "disposal_wall-full")
+
+	// charging and ready light
+	if(mode == 1)
+		overlays += image('icons/obj/pipes/disposal.dmi', "disposal_wall-charge")
+	else if(mode == 2)
+		overlays += image('icons/obj/pipes/disposal.dmi', "disposal_wall-ready")
+
 // Disposal pipes
 
 /obj/structure/disposalpipe
