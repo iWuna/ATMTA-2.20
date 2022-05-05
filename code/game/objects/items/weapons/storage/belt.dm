@@ -680,7 +680,6 @@
 		/obj/item/restraints/legcuffs/bola
 		)
 
-	flags = NODROP
 	var/smokecount = 0
 	var/bolacount = 0
 	var/cooldown = 0

@@ -37,6 +37,18 @@
 	. = ..()
 	air_update_turf(1)
 
+/obj/structure/falsewall/examine_status(mob/user)
+	var/healthpercent = (obj_integrity/max_integrity) * 100
+	switch(healthpercent)
+		if(100)
+			return "<span class='notice'>It looks fully intact.</span>"
+		if(70 to 99)
+			return  "<span class='warning'>It looks slightly damaged.</span>"
+		if(40 to 70)
+			return  "<span class='warning'>It looks moderately damaged.</span>"
+		if(0 to 40)
+			return "<span class='danger'>It looks heavily damaged.</span>"
+
 /obj/structure/falsewall/ratvar_act()
 	new /obj/structure/falsewall/brass(loc)
 	qdel(src)
