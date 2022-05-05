@@ -273,6 +273,13 @@ SUBSYSTEM_DEF(air)
 			T.excited_group.garbage_collect()
 
 /datum/controller/subsystem/air/proc/add_to_active(turf/simulated/T, blockchanges = 1)
+	if(!initialized)
+		/* it makes no sense to "activate" turfs before setup_allturfs is
+		   called, as setup_allturfs would simply cull the list incorrectly.
+		   only /turf/simulated/Initialize_Atmos() is blessed enough to
+		   activate turfs during this phase of initialization, as it happens
+		   post-cull and inlines the logic (perhaps incorrectly) */
+		return
 	if(istype(T) && T.air)
 //		T.add_atom_colour("#00ff00", TEMPORARY_COLOUR_PRIORITY)
 		T.excited = 1
@@ -290,11 +297,8 @@ SUBSYSTEM_DEF(air)
 				add_to_active(S)
 
 /datum/controller/subsystem/air/proc/setup_allturfs(var/list/turfs_to_init = block(locate(1, 1, 1), locate(world.maxx, world.maxy, world.maxz)))
-	var/list/active_turfs = src.active_turfs
-
-	// Clear active turfs - faster than removing every single turf in the world
-	// one-by-one, and Initalize_Atmos only ever adds `src` back in.
-	active_turfs.Cut()
+	if(active_turfs.len)
+		log_debug("failed sanity check: active_turfs is not empty before initialization ([active_turfs.len])")
 
 	for(var/thing in turfs_to_init)
 		var/turf/T = thing
