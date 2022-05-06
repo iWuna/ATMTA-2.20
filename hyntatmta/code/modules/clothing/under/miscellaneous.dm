@@ -53,3 +53,29 @@
 	desc = "Некогда стильный комбинезон жителя убежища, если верить этикетке. Как это вообще тут оказалось?"
 	icon_state = "vault_exile"
 	item_color = "vault_exile"
+
+/obj/item/clothing/under/atmta/evangelion
+	name = "Mecha's Pilot Suit"
+	desc = "Mecha's operator suit for better integration. This one are black."
+	icon_state = "retro_mech_suit"
+	item_color = "retro_mech_suit"
+	has_sensor = TRUE
+	armor = list(melee = 5, bullet = 2, laser = 1,energy = 0, bomb = 0, bio = 0, rad = 0)
+
+/obj/item/clothing/under/atmta/evangelion/asuka
+	name = "Mecha's Pilot Suit"
+	desc = "Mecha's operator suit for better integration. This one are red."
+	icon_state = "red_mech_suit"
+	item_color = "red_mech_suit"
+
+/obj/item/clothing/under/atmta/evangelion/shinji
+	name = "Blue Mecha's Pilot Suit"
+	desc = "Mecha's operator suit for better integration. This one are blue."
+	icon_state = "blue_mech_suit"
+	item_color = "blue_mech_suit"
+
+/obj/item/clothing/under/atmta/evangelion/ayanami
+	name = "White Mecha's Pilot Suit"
+	desc = "Mecha's operator suit for better integration. This one are white."
+	icon_state = "white_mech_suit"
+	item_color = "white_mech_suit"
