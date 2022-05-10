@@ -590,7 +590,7 @@
 /obj/spacepod/sec
 	name = "\improper security spacepod"
 	desc = "An armed security spacepod with reinforced armor plating."
-	icon_state = "pod_dece"
+	icon_state = "pod_mil" //f
 	health = 400
 
 /obj/spacepod/syndi
