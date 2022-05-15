@@ -170,7 +170,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A grenade that explodes into HONK! brand banana peels that are genetically modified to be extra slippery and extrude caustic acid when stepped on"
 	reference = "BG"
 	item = /obj/item/grenade/clown_grenade
-	cost = 2
+	cost = 5
 	job = list("Clown")
 
 /datum/uplink_item/jobspecific/clownmagboots
@@ -227,7 +227,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A mean looking meat cleaver that does damage comparable to an Energy Sword but with the added benefit of chopping your victim into hunks of meat after they've died."
 	reference = "MC"
 	item = /obj/item/kitchen/knife/butcher/meatcleaver
-	cost = 4
+	cost = 10
 	job = list("Chef")
 
 /datum/uplink_item/jobspecific/syndidonk
@@ -245,7 +245,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A doll created by Syndicate Witch Doctors. Ingredients: Something of the Thread, Something of the Head, Something of the Body, Something of the Dead, Secret Voodoo herbs, and Monosodium glutamate."
 	reference = "VD"
 	item = /obj/item/voodoo
-	cost = 4
+	cost = 13
 	job = list("Chaplain")
 
 /datum/uplink_item/jobspecific/missionary_kit
@@ -376,7 +376,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A seemingly innocent briefcase full of not-so-innocent Syndicate-bred bees. Inject the case with blood to train the bees to ignore the donor(s). It also wirelessly taps into station intercomms to broadcast a message of TERROR."
 	reference = "BEE"
 	item = /obj/item/bee_briefcase
-	cost = 6
+	cost = 10
 	job = list("Botanist")
 
 //Engineer
@@ -433,7 +433,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A highly flexible jumpsuit that will help you navigate the ventilation loops of the station internally. Comes with pockets and ID slot, but can't be used without stripping off most gear, including backpack, belt, helmet, and exosuit. Free hands are also necessary to crawl around inside."
 	reference = "AIRJ"
 	item = /obj/item/clothing/under/contortionist
-	cost = 10
+	cost = 6
 	job = list("Life Support Specialist")
 
 /datum/uplink_item/jobspecific/energizedfireaxe
@@ -441,7 +441,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A fire axe with a massive energy charge built into it. Upon striking someone while charged it will throw them backwards while stunning them briefly, but will take some time to charge up again. It is also much sharper than a regular axe and can pierce light armor."
 	reference = "EFA"
 	item = /obj/item/twohanded/fireaxe/energized
-	cost = 4
+	cost = 10
 	job = list("Life Support Specialist")
 
 //Stimulants
@@ -451,7 +451,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A highly illegal compound contained within a compact auto-injector; when injected it makes the user extremely resistant to incapacitation and greatly enhances the body's ability to repair itself."
 	reference = "ST"
 	item = /obj/item/reagent_containers/hypospray/autoinjector/stimulants
-	cost = 5
+	cost = 7
 	job = list("Scientist", "Research Director", "Geneticist", "Chief Medical Officer", "Medical Doctor", "Psychiatrist", "Chemist", "Paramedic", "Coroner", "Virologist")
 
 //Tator Poison Bottles
@@ -494,7 +494,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	reference = "SR"
 	desc = "A brutally simple syndicate revolver that fires .357 Magnum cartridges and has 7 chambers."
 	item = /obj/item/gun/projectile/revolver
-	cost = 10
+	cost = 13
 	surplus = 50
 
 /datum/uplink_item/dangerous/smg
@@ -529,7 +529,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "These gloves let the user punch people very fast. Does not improve weapon attack speed."
 	reference = "RPGD"
 	item = /obj/item/clothing/gloves/fingerless/rapid
-	cost = 4
+	cost = 8
 
 /datum/uplink_item/dangerous/sniper
 	name = "Sniper Rifle"
@@ -583,14 +583,14 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 		 deal extra damage and hit targets further. Use a screwdriver to take out any attached tanks."
 	reference = "PF"
 	item = /obj/item/melee/powerfist
-	cost = 4
+	cost = 8
 
 /datum/uplink_item/dangerous/chainsaw
 	name = "Chainsaw"
 	desc = "A high powered chainsaw for cutting up ...you know...."
 	reference = "CH"
 	item = /obj/item/twohanded/chainsaw
-	cost = 12
+	cost = 13
 
 
 // SUPPORT AND MECHAS
@@ -863,7 +863,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A speed loader that contains seven additional .357 Magnum rounds for the syndicate revolver. For when you really need a lot of things dead."
 	reference = "357"
 	item = /obj/item/ammo_box/a357
-	cost = 1
+	cost = 3
 
 // STEALTHY WEAPONS
 
@@ -897,7 +897,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A manual that teaches a single user tactical Close-Quarters Combat before self-destructing. Does not restrict weapon usage, but cannot be used alongside Gloves of the North Star."
 	reference = "CQC"
 	item = /obj/item/CQC_manual
-	cost = 10
+	cost = 13
 	cant_discount = TRUE
 
 /datum/uplink_item/stealthy_weapons/cameraflash
@@ -1074,7 +1074,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A pizza box with a bomb taped inside of it. The timer needs to be set by opening the box; afterwards, opening the box again will trigger the detonation."
 	reference = "PB"
 	item = /obj/item/pizza_bomb
-	cost = 3
+	cost = 5
 	surplus = 80
 
 /datum/uplink_item/explosives/grenadier
@@ -1099,7 +1099,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A box of two (2) grenades that spread knockout gas over a large area. Equip internals before using one of these."
 	reference = "ANG"
 	item = /obj/item/storage/box/syndie_kit/atmosn2ogrenades
-	cost = 4
+	cost = 8
 
 /datum/uplink_item/explosives/atmosfiregrenades
 	name = "Plasma Fire Grenades"
@@ -1214,7 +1214,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "Projects an image across a user, disguising them as an object scanned with it, as long as they don't move the projector from their hand. The disguised user cannot run and projectiles pass over them."
 	reference = "CP"
 	item = /obj/item/chameleon
-	cost = 5
+	cost = 7
 
 /datum/uplink_item/stealthy_tools/camera_bug
 	name = "Camera Bug"
@@ -1245,7 +1245,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 		Useful for disrupting headsets, cameras, and borgs during stealth operations."
 	reference = "EMPL"
 	item = /obj/item/flashlight/emp
-	cost = 4
+	cost = 2
 	surplus = 30
 
 /datum/uplink_item/stealthy_tools/syndigaloshes
@@ -1300,7 +1300,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "The cryptographic sequencer, also known as an emag, is a small card that unlocks hidden functions in electronic devices, subverts intended functions and characteristically breaks security mechanisms."
 	reference = "EMAG"
 	item = /obj/item/card/emag
-	cost = 10 // No brainrot allowed
+	cost = 6
 
 /datum/uplink_item/device_tools/access_tuner
 	name = "Access Tuner"
@@ -1439,7 +1439,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "When used with an upload console, this module allows you to upload priority laws to an artificial intelligence. Be careful with their wording, as artificial intelligences may look for loopholes to exploit."
 	reference = "HAI"
 	item = /obj/item/aiModule/syndicate
-	cost = 8
+	cost = 10
 
 /datum/uplink_item/device_tools/magboots
 	name = "Blood-Red Magboots"
@@ -1498,7 +1498,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "This device will disrupt any nearby outgoing radio communication when activated."
 	reference = "RJ"
 	item = /obj/item/jammer
-	cost = 2
+	cost = 5
 
 /datum/uplink_item/device_tools/teleporter
 	name = "Teleporter Circuit Board"
@@ -1554,7 +1554,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "An implant injected into the body, and later activated manually to open an uplink with 10 telecrystals. The ability for an agent to open an uplink after their possessions have been stripped from them makes this implant excellent for escaping confinement."
 	reference = "UI"
 	item = /obj/item/implanter/uplink
-	cost = 12
+	cost = 14
 	excludefrom = list(UPLINK_TYPE_NUCLEAR, UPLINK_TYPE_SST)
 	surplus = 0
 	cant_discount = TRUE
@@ -1564,7 +1564,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "An implant injected into the body, and later activated at the user's will. It will open a small subspace pocket capable of storing two items."
 	reference = "ESI"
 	item = /obj/item/implanter/storage
-	cost = 6
+	cost = 8
 
 /datum/uplink_item/implants/mindslave
 	name = "Mindslave Implant"

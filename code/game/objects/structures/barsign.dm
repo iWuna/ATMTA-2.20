@@ -386,29 +386,29 @@
 	desc = "Open since 2125, Not much has changed since then; the engineers still release the singulo and the damn miners still are more likely to cave your face in that deliver ores."
 
 /datum/barsign/evahumanspace
-	name = "SS220 EVA Human in Space"
+	name = "EVA Human in Space"
 	icon = "evahumanspace"
 	desc = "Safety is a privilege."
 
-/datum/barsign/warpsurf
-	name = "SS220 Warp Surf"
-	icon = "warpsurf"
-	desc = "Welcome to the club, buddy!"
+/datum/barsign/meowmix
+	name = "Meow Mix"
+	icon = "MeowMix"
+	desc = "Me-e-eow."
 
-/datum/barsign/papacafe
-	name = "SS220 Space Daddy's Cafe"
-	icon = "papacafe"
-	desc = "Respect your Space Daddy!"
+/datum/barsign/greytide2
+	name = "The Grey Tide"
+	icon = "thegreytide_alt"
+	desc = "There's a lot of them."
 
-/datum/barsign/wycctide
-	name = "SS220 Wycctide"
-	icon = "wycctide"
-	desc = "Oh no, it's coming!"
+/datum/barsign/narsiebistro
+	name = "The Nar-Sie Bistro"
+	icon = "narsiebistro"
+	desc = "GREAT NAR-SIE."
 
-/datum/barsign/shitcur
-	name = "SS220 Shitcur"
-	icon = "shitcur"
-	desc = "Innocence proves nothing."
+/datum/barsign/bootknive
+	name = "The Boot Knive"
+	icon = "bootknive"
+	desc = "Входит и выходит."
 
 /datum/barsign/hiddensigns
 	hidden = 1
