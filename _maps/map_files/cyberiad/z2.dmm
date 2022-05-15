@@ -3858,18 +3858,6 @@
 	icon_state = "plastitanium"
 	},
 /area/vox_station)
-"dAx" = (
-/obj/structure/table/wood/poker,
-/obj/item/toy/plushie/coffee_fox{
-	desc = "Что делает такая прекрасная лиса в таком ужасном месте? Возможно она кого то символизирует, но скорее всего это лишь ваши фантазии. \n Вы замечаете небольшую заметку на бирке игрушки, однако все что удается вам разглядеть это Sl-end-er.";
-	name = "Лиса?"
-	},
-/turf/space,
-/turf/unsimulated/floor{
-	dir = 8;
-	icon_state = "grimy"
-	},
-/area/centcom/evac)
 "dAK" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/space/hardsuit/syndi,
@@ -5260,22 +5248,6 @@
 	tag = "icon-floor"
 	},
 /area/admin)
-"eGS" = (
-/obj/structure/closet/crate/freezer{
-	desc = "Холодильник с напитками. Ничего необычного."
-	},
-/obj/item/reagent_containers/food/drinks/cans/iced_tea,
-/obj/item/reagent_containers/food/drinks/cans/iced_tea,
-/obj/item/reagent_containers/food/drinks/cans/iced_tea,
-/obj/item/reagent_containers/food/drinks/cans/iced_tea,
-/obj/item/reagent_containers/food/drinks/cans/iced_tea,
-/obj/item/reagent_containers/food/drinks/cans/iced_tea,
-/obj/item/reagent_containers/food/drinks/cans/iced_tea,
-/turf/unsimulated/floor{
-	dir = 8;
-	icon_state = "grimy"
-	},
-/area/centcom/evac)
 "eHe" = (
 /obj/structure/flora/rock,
 /obj/machinery/camera{
@@ -5941,9 +5913,6 @@
 	},
 /area/centcom/zone1)
 "fcB" = (
-/obj/structure/bed/dogbed/ian{
-	name = "Lounger"
-	},
 /obj/machinery/door_control{
 	color = "#ffcccc";
 	id = "ERT_turret_shutters";
@@ -5952,7 +5921,6 @@
 	pixel_y = 33;
 	req_access_txt = "114"
 	},
-/mob/living/simple_animal/pet/dog/fox/alisa,
 /obj/machinery/turretid/lethal{
 	ailock = 1;
 	control_area = "\improper Centcom Emergency Shuttle";
@@ -11612,7 +11580,6 @@
 /area/centcom/jail)
 "jnD" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/trophy/gold_cup,
 /turf/unsimulated/floor{
 	dir = 8;
 	icon_state = "grimy"
@@ -21823,9 +21790,6 @@
 /obj/item/book/manual/security_space_law{
 	pixel_x = 3
 	},
-/obj/item/book/manual/security_space_law{
-	pixel_x = 3
-	},
 /turf/unsimulated/floor{
 	dir = 8;
 	icon_state = "grimy"
@@ -23618,17 +23582,6 @@
 	},
 /turf/space/transit/horizontal,
 /area/space)
-"rMq" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/flask/detflask{
-	pixel_x = -7;
-	pixel_y = 5
-	},
-/turf/unsimulated/floor{
-	dir = 8;
-	icon_state = "grimy"
-	},
-/area/centcom/evac)
 "rMD" = (
 /turf/unsimulated/floor{
 	dir = 6;
@@ -29404,10 +29357,6 @@
 	switchcount = 50
 	},
 /obj/structure/table/wood,
-/obj/machinery/computer/secure_data/laptop{
-	desc = "Похоже, что на данном ноутбуке открыт какой-то старый браузер, со включенной вкладкой Twitch BANDA.";
-	name = "Ноутбук"
-	},
 /turf/unsimulated/floor{
 	dir = 8;
 	icon_state = "grimy"
@@ -85987,7 +85936,7 @@ nqE
 sAC
 sAC
 dEy
-eGS
+sAC
 sAC
 sAC
 dEy
@@ -86244,7 +86193,7 @@ nrD
 xaZ
 obc
 dEy
-rMq
+sAC
 sAC
 sAC
 dEy
@@ -86766,7 +86715,7 @@ kpJ
 cPV
 cah
 ehx
-dAx
+qlj
 qlj
 qcy
 qqp
