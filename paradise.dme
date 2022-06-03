@@ -2633,6 +2633,7 @@
 #include "hyntatmta\code\modules\reagents\reagent_containers\food\drinks.dm"
 #include "hyntatmta\code\modules\reagents\reagent_containers\food\snacks.dm"
 #include "hyntatmta\merens\custom_weapon.dm"
+#include "hyntatmta\merens\galstuk_elysium.dm"
 #include "hyntatmta\merens\jukebox.dm"
 #include "hyntatmta\merens\jukebox_custom_music.dm"
 #include "hyntatmta\merens\jukebox_music.dm"
