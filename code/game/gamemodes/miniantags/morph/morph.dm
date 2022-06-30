@@ -212,14 +212,6 @@
 		affecting.receive_damage(20)
 		add_food(5)
 
-	if (!morphed && prob(25))
-		var/food_value = calc_food_gained(item)
-		if(food_value + gathered_food > 0)
-			to_chat(user, "<span class='warning'>[src] just ate your [item]!</span>")
-			user.unEquip(item)
-			eat(item)
-			return TRUE
-
 	restore_form()
 	return ..()
 
@@ -227,12 +219,22 @@
 	if (morphed)
 		return mimic_spell.restore_form(src);
 
-/mob/living/simple_animal/hostile/morph/attackby(obj/item/O, mob/living/user)
+/mob/living/simple_animal/hostile/morph/attackby(obj/item/I, mob/living/user)
 	if(user.a_intent == INTENT_HELP && ambush_prepared)
-		to_chat(user, "<span class='warning'>You try to use [O] on [src]... it seems different than no-</span>")
+		to_chat(user, "<span class='warning'>You try to use [I] on [src]... it seems different than no-</span>")
 		ambush_attack(user, TRUE)
 		return TRUE
+
+	if (!morphed && prob(25))
+		var/food_value = calc_food_gained(I)
+		if(food_value + gathered_food > 0)
+			to_chat(user, "<span class='warning'>[src] just ate your [I]!</span>")
+			user.unEquip(I)
+			eat(I)
+			return TRUE
+
 	restore_form()
+	return ..()
 
 /mob/living/simple_animal/hostile/morph/attack_animal(mob/living/simple_animal/M)
 	if(M.a_intent == INTENT_HELP && ambush_prepared)
