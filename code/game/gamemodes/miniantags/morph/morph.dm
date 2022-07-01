@@ -220,6 +220,10 @@
 		return mimic_spell.restore_form(src);
 
 /mob/living/simple_animal/hostile/morph/attackby(obj/item/I, mob/living/user)
+	if (stat == DEAD)
+		restore_form()
+		return ..()
+
 	if(user.a_intent == INTENT_HELP && ambush_prepared)
 		to_chat(user, "<span class='warning'>You try to use [I] on [src]... it seems different than no-</span>")
 		ambush_attack(user, TRUE)
