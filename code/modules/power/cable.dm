@@ -471,7 +471,11 @@ By design, d1 is the smallest direction and d2 is the highest
 // Definitions
 ////////////////////////////////
 
-GLOBAL_LIST_INIT(cable_coil_recipes, list (new/datum/stack_recipe("cable restraints", /obj/item/restraints/handcuffs/cable, 15)))
+//GLOBAL_LIST_INIT(cable_coil_recipes, list (new/datum/stack_recipe("cable restraints", /obj/item/restraints/handcuffs/cable, 15)))
+
+GLOBAL_LIST_INIT(cable_coil_recipes, list ( \
+	new/datum/stack_recipe("cable restraints", /obj/item/restraints/handcuffs/cable, 15), \
+	new/datum/stack_recipe("noose", /obj/structure/bed/noose, 25)))
 
 /obj/item/stack/cable_coil
 	name = "cable coil"
@@ -495,13 +499,6 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list (new/datum/stack_recipe("cable restrai
 	attack_verb = list("whipped", "lashed", "disciplined", "flogged")
 	usesound = 'sound/items/deconstruct.ogg'
 	toolspeed = 1
-
-/obj/item/stack/cable_coil/suicide_act(mob/user)
-	if(locate(/obj/structure/chair/stool) in user.loc)
-		user.visible_message("<span class='suicide'>[user] is making a noose with the [name]! It looks like [user.p_theyre()] trying to commit suicide.</span>")
-	else
-		user.visible_message("<span class='suicide'>[user] is strangling [user.p_them()]self with the [name]! It looks like [user.p_theyre()] trying to commit suicide.</span>")
-	return OXYLOSS
 
 /obj/item/stack/cable_coil/New(loc, length = MAXCOIL, paramcolor = null)
 	..()
@@ -885,6 +882,7 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list (new/datum/stack_recipe("cable restrai
 	buckle_lying = 0
 	var/image/over
 	var/ticks = 0
+	var/choke_delay = 25
 
 /obj/structure/bed/noose/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/wirecutters))
@@ -924,36 +922,38 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list (new/datum/stack_recipe("cable restrai
 		M.pixel_y = M.get_standard_pixel_y_offset(M.lying)
 
 /obj/structure/bed/noose/user_unbuckle_mob(mob/living/user)
-	if(buckled_mobs)
-		var/mob/M = buckled_mobs
-		if(M != user)
-			user.visible_message("<span class='notice'>[user] begins to untie the noose over [M]'s neck...</span>",\
-								"<span class='notice'>You begin to untie the noose over [M]'s neck...</span>")
-			if(!do_mob(user, M, 100))
-				return
-			user.visible_message("<span class='notice'>[user] unties the noose over [M]'s neck!</span>",\
-								"<span class='notice'>You untie the noose over [M]'s neck!</span>")
-		else
-			M.visible_message(\
-				"<span class='warning'>[M] struggles to untie the noose over their neck!</span>",\
-				"<span class='notice'>You struggle to untie the noose over your neck... (Stay still for 15 seconds.)</span>")
-			if(!do_after(M, 150, target = src))
-				if(M && M.buckled)
-					to_chat(M, "<span class='warning'>You fail to untie yourself!</span>")
-				return
-			if(!M.buckled)
-				return
-			M.visible_message(\
-				"<span class='warning'>[M] unties the noose over their neck!</span>",\
-				"<span class='notice'>You untie the noose over your neck!</span>")
-			M.Weaken(3)
-		if(istype(M, /mob/living/carbon/human))
-			var/mob/living/carbon/human/H = M
-			H.noosed = FALSE
-		unbuckle_mob(force=1)
-		M.pixel_z = initial(M.pixel_z)
-		pixel_z = initial(pixel_z)
-		add_fingerprint(user)
+	if(has_buckled_mobs())
+		for(var/buck in buckled_mobs)
+			var/mob/living/M = buck
+			if(M != user)
+				user.visible_message("<span class='notice'>[user.name] begins to untie the noose over [M.name]'s neck...</span>",\
+									"<span class='notice'>You begin to untie the noose over [M.name]'s neck...</span>")
+				if(!do_mob(user, M, 100))
+					return
+				user.visible_message("<span class='notice'>[user.name] unties the noose over [M.name]'s neck!</span>",\
+									"<span class='notice'>You untie the noose over [M.name]'s neck!</span>")
+			else
+				M.visible_message(\
+					"<span class='warning'>[M.name] struggles to untie the noose over their neck!</span>",\
+					"<span class='notice'>You struggle to untie the noose over your neck... (Stay still for 15 seconds.)</span>")
+				if(!do_after(M, 150, target = src))
+					if(M && M.buckled)
+						to_chat(M, "<span class='warning'>You fail to untie yourself!</span>")
+					return
+				if(!M.buckled)
+					return
+				M.visible_message(\
+					"<span class='warning'>[M.name] unties the noose over their neck!</span>",\
+					"<span class='notice'>You untie the noose over your neck!</span>")
+				M.Weaken(3)
+			if(istype(M, /mob/living/carbon/human))
+				var/mob/living/carbon/human/H = M
+				H.noosed = FALSE
+			unbuckle_mob(M)
+			user.pixel_z = initial(user.pixel_z)
+			pixel_z = initial(pixel_z)
+			user.SetLoseBreath(0)
+			add_fingerprint(user)
 
 /obj/structure/bed/noose/user_buckle_mob(mob/living/carbon/human/H, mob/user)
 	if(!in_range(user, src) || user.incapacitated() || !ishuman(H))
@@ -973,34 +973,44 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list (new/datum/stack_recipe("cable restrai
 
 	if(H == user && buckle_mob(H))
 		H.visible_message(\
-			"<span class='suicide'>[H] ties \the [src] over their neck!</span>",\
+			"<span class='suicide'>[H.name] ties \the [src] over their neck!</span>",\
 			"<span class='suicide'>You tie \the [src] over your neck!</span>")
 		playsound(user.loc, 'sound/effects/noosed.ogg', 50, 1, -1)
 		H.noosed = TRUE
+
+		if(H.stat != DEAD)
+		//	for(var/i in 1 to 3 step 1)
+		//		spawn(choke_delay * i)
+		//			H.SetLoseBreath(40)
+			H.SetLoseBreath(40)
+
 		return TRUE
 	else
 		H.visible_message(\
-			"<span class='danger'>[user] attempts to tie \the [src] over [H]'s neck!</span>",\
-			"<span class='userdanger'>[user] ties \the [src] over your neck!</span>")
+			"<span class='danger'>[user.name] attempts to tie \the [src] over [H.name]'s neck!</span>",\
+			"<span class='userdanger'>[user.name] ties \the [src] over your neck!</span>")
 		to_chat(H, "<span class='notice'>It will take 20 seconds and you have to stand still.</span>")
 		if(do_mob(user, H, 200))
 			if(buckle_mob(H))
 				H.visible_message(\
-					"<span class='danger'>[user] ties \the [src] over [H]'s neck!</span>",\
-					"<span class='userdanger'>[user] ties \the [src] over your neck!</span>")
+					"<span class='danger'>[user.name] ties \the [src] over [H.name]'s neck!</span>",\
+					"<span class='userdanger'>[user.name] ties \the [src] over your neck!</span>")
 				playsound(user.loc, 'sound/effects/noosed.ogg', 50, 1, -1)
 				H.noosed = TRUE
 				return TRUE
 			else
 				user.visible_message(\
-					"<span class='warning'>[user] fails to tie \the [src] over [H]'s neck!</span>",\
-					"<span class='warning'>You fail to tie \the [src] over [H]'s neck!</span>")
+					"<span class='warning'>[user.name] fails to tie \the [src] over [H.name]'s neck!</span>",\
+					"<span class='warning'>You fail to tie \the [src] over [H.name]'s neck!</span>")
 				return FALSE
 		else
 			user.visible_message(\
-				"<span class='warning'>[user] fails to tie \the [src] over [H]'s neck!</span>",\
-				"<span class='warning'>You fail to tie \the [src] over [H]'s neck!</span>")
+				"<span class='warning'>[user.name] fails to tie \the [src] over [H.name]'s neck!</span>",\
+				"<span class='warning'>You fail to tie \the [src] over [H.name]'s neck!</span>")
 			return FALSE
+
+/obj/structure/bed/noose/prevents_buckled_mobs_attacking()
+	return TRUE
 
 /obj/structure/bed/noose/process()
 	if(!buckled_mobs)
@@ -1018,16 +1028,15 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list (new/datum/stack_recipe("cable restrai
 		animate(src, pixel_x = 3, time = 45, easing = ELASTIC_EASING)
 		animate(H, pixel_x = 3, time = 45, easing = ELASTIC_EASING)
 	if(H.mob_has_gravity())
-		H.SetLoseBreath(2)
 		if(prob(20))
-			var/flavor_text = list("<span class='suicide'>[buckled_mobs]'s legs flail for anything to stand on.</span>",\
-									"<span class='suicide'>[buckled_mobs]'s hands are desperately clutching the noose.</span>",\
-									"<span class='suicide'>[buckled_mobs]'s limbs sway back and forth with diminishing strength.</span>")
+			var/flavor_text = list("<span class='suicide'>[H.name]'s legs flail for anything to stand on.</span>",\
+									"<span class='suicide'>[H.name]'s hands are desperately clutching the noose.</span>",\
+									"<span class='suicide'>[H.name]'s limbs sway back and forth with diminishing strength.</span>")
 //			if(HAS_TRAIT(H, BREATHLESS))
-//				flavor_text = list("<span class='suicide'>[buckled_mobs] idly sways back and forth.</span>")
+//				flavor_text = list("<span class='suicide'>[H.name] idly sways back and forth.</span>")
 			if(H.stat == DEAD)
-				flavor_text = list("<span class='suicide'>[buckled_mobs]'s limbs lifelessly sway back and forth.</span>",\
-									"<span class='suicide'>[buckled_mobs]'s eyes stare straight ahead.</span>")
+				flavor_text = list("<span class='suicide'>[H.name]'s limbs lifelessly sway back and forth.</span>",\
+									"<span class='suicide'>[H.name]'s eyes stare straight ahead.</span>")
 
 			H.visible_message(pick(flavor_text))
 			playsound(H.loc, 'sound/effects/noose_idle.ogg', 30, 1, -3)
