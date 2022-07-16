@@ -1,9 +1,11 @@
-/obj/item/clothing/accessory/red/elysium
-	name = "strange red tie"
-	var/list/phrase_list = list("i'm gay!","You shitass!","Harder daddy!","Smile!")
-	var/phrase_delay = 500
+/obj/item/clothing/accessory/elysium
+	name = "Strange tie"
+	icon = 'hyntatmta/icons/obj/clothing/ties.dmi'
+	icon_state = "elysium"
+	var/list/phrase_list = list("Смотри, он явно что-то задумал!","Блять, нас спалили, валим!","Да всё нормально, тихо ты.","Пока не доказано, не ебёт что сказано!","Знаешь что, давай ввалим ему!","Это... Не лучшая идея","Может добавить огоньку?","ЕБАШ КЕПАРИКА!","Давай сядем и хорошенько всё обсудим","Так, нам проблемы не нужны.","А ну-ка, покажи ему свой ствол, вдруг он заговорит иначе?","Э-э-э, нее, так просто тут не отделаешься. ")
+	var/phrase_delay = 1000
 
-/obj/item/clothing/accessory/red/elysium/on_attached(obj/item/clothing/under/S, mob/user as mob)
+/obj/item/clothing/accessory/elysium/on_attached(obj/item/clothing/under/S, mob/user as mob)
 	..()
 	if(prob(30))
 		var/phrase = pick(src.phrase_list)
