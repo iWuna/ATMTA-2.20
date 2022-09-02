@@ -2644,6 +2644,7 @@
 #include "hyntatmta\merens\jukebox.dm"
 #include "hyntatmta\merens\jukebox_custom_music.dm"
 #include "hyntatmta\merens\jukebox_music.dm"
+#include "hyntatmta\merens\monkey_seventeen.dm"
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
 // END_INCLUDE

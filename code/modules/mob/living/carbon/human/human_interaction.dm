@@ -1,4 +1,10 @@
 /mob/living/carbon/human/Topic(href, href_list)
+///ATMTA ERP SHIT///
+	var/list/how = list("нежно","аккуратно","очень нежно","грубо")
+	var/list/what_pen = list("член","пенис","хуец")
+	var/list/what_vag = list("вульву","вагину","влагалище")
+	var/list/does_hand = list("надрачивает","дрочит","подрачивает")
+
 	///////Interactions!!///////
 	if(href_list["interaction"])
 		if (usr.stat == DEAD || usr.stat == UNCONSCIOUS || usr.restrained())
@@ -201,5 +207,19 @@
 					H.visible_message("<B>[H]</B> пытается поймать <B>[P]</B> за хвост!")
 					if (istype(P.loc, /obj/structure/closet))
 						P.visible_message("<B>[H]</B> пытается поймать <B>[P]</B> за хвост!")
+
+///ATMTA ERP SHIT///
+		else if (href_list["interaction"] == "stroke_penis")
+			if(((H.Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
+				H.visible_message("<B>[H]</B> [how] [what_pen] [does_hand] <B>[P]</B>.")
+				if (istype(P.loc, /obj/structure/closet))
+					P.visible_message("<B>[H]</B> [how] [does_hand] [what_pen] <B>[P]</B>.")
+
+		else if (href_list["interaction"] == "stroke_vagina")
+			if(((H.Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
+				H.visible_message("<B>[H]</B> [how] [what_pen] [does_hand] <B>[P]</B>.")
+				if (istype(P.loc, /obj/structure/closet))
+					P.visible_message("<B>[H]</B> [pick(how)] [pick(does_hand)] [pick(what_vag)] <B>[P]</B>.")
+
 		return
 	..()

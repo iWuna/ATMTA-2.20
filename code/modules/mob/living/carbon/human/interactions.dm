@@ -54,6 +54,13 @@
 			dat +=  {"• <A href='?src=[UID()];interaction=hug'>Обнимашки!</A><BR>"}
 			dat +=  {"• <A href='?src=[UID()];interaction=cheer'>Похлопать по плечу</A><BR>"}
 			dat +=  {"• <A href='?src=[UID()];interaction=five'>Дать пять.</A><BR>"}
+
+			if(is_nude(H))
+				if(H.gender == MALE)
+					dat += {"• <A href='?src=[UID()];interaction=stroke_penis'>Подрочить.</A><BR>"}
+				else
+					dat += {"• <A href='?src=[UID()];interaction=stroke_vagina'>Подрочить.</A><BR>"}
+
 			if (hashands_p)
 				dat +=  {"• <A href='?src=[UID()];interaction=give'>Передать предмет.</A><BR>"}
 			dat +=  {"• <A href='?src=[UID()];interaction=slap'><font color=darkred>Дать пощечину!</font></A><BR>"}
