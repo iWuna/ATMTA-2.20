@@ -439,3 +439,8 @@
 	set name = "< Отрицательно >"
 	set category = "Эмоции"
 	usr.emote("no")
+
+/mob/living/carbon/human/verb/emote_sieg()
+	set name = "> Зигануть"
+	set category = "Эмоции"
+	usr.emote("siegheil")

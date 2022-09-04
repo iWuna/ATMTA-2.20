@@ -1,3 +1,5 @@
+GLOBAL_LIST_INIT(anekdoty_list, file2list("hyntatmta/txt/anekdoty.txt"))
+
 /datum/species/monkey_stirlitz
 	name = "Monkey Stirlitz"
 	name_plural = "Monkeys"
@@ -32,7 +34,6 @@
 	tail = "chimptail"
 	bodyflags = HAS_TAIL
 	reagent_tag = PROCESS_ORG
-	//Has standard darksight of 2.
 
 	unarmed_type = /datum/unarmed_attack/bite
 
@@ -54,24 +55,13 @@
 		"r_foot" = list("path" = /obj/item/organ/external/foot/right),
 		"tail" =   list("path" = /obj/item/organ/external/tail/monkey))
 
-	var/list/anekdoty_list = list(
-	"Идёт Штирлиц по лесу, и тут на его плечо падает гусеница. Где то взорвался танк подумал Штирлиц.",
-	"В дверь постучали. \"Опять как только срать сел\" - недовольно подметил штирлиц.",
-	"В дверь постучали три раза, закрыли глаза и хлопнули в ладоши. \"Долбоебы\" - подумал Штирлиц/ \"Извините сам попался\" - послышалось из-за двери",
-	"Штирлиц стрелял вслепую. Слепая испугалась и стала убегать скачками. Однако качки быстро отстали.",
-	"Мюллер вызывает Штирлица: - Nennen eine beliebige zweistellige zahl. - Чего блять?",
-	"Штирлиц подошел к окну. Из окна дуло. Штирлиц закрыл окно, дуло исчезло.",
-	"Штирлиц шел по Берлину и что-то неуловимое выдавало в нем советского разведчика. То ли буденовка, лихо сдвинутая набекрень, то ли парашют, который волочился за ним по всему городу.",
-	"Последний человек на земле заперся в комнате. В дверь постучали - Предпоследний - подумал Штирлиц")
-
 /datum/species/monkey_stirlitz/handle_npc(mob/living/carbon/human/H)
 	if(H.stat != CONSCIOUS)
 		return
 	if(prob(33) && H.canmove && isturf(H.loc) && !H.pulledby) //won't move if being pulled
 		step(H, pick(GLOB.cardinal))
 	if(prob(5))
-		//H.emote(pick("scratch","jump","roll","tail"))
-		var/phrase = pick(src.anekdoty_list)
+		var/phrase = pick(GLOB.anekdoty_list)
 		H.say("[phrase]")
 
 /datum/species/monkey_stirlitz/get_random_name()
@@ -89,18 +79,23 @@
 		H.dna.SetSEState(GLOB.monkeyblock, TRUE)
 		genemutcheck(H, GLOB.monkeyblock, null, MUTCHK_FORCED)
 
-
-/datum/species/monkey/stirlitz
-	var/phrase_delay = 50
-
 /mob/living/carbon/human/stirlitz_monkey/Initialize(mapload)
 	. = ..(mapload, /datum/species/monkey_stirlitz)
 	equip_to_slot(new /obj/item/clothing/under/stirlitz_monkey(src), slot_w_uniform)
+	equip_to_slot(new /obj/item/clothing/head/atmta/waffen/monkey(src), slot_head)
 
 /obj/item/clothing/under/stirlitz_monkey
 	name = "fancy uniform"
 	desc = "It looks like it was tailored for a monkey."
 	icon_state = "stir_monk"
 	item_color = "stir_monk"
+	species_restricted = list("Monkey Stirlitz")
+	species_exception = list(/datum/species/monkey_stirlitz)
+
+/obj/item/clothing/head/atmta/waffen/monkey
+	name = "Head of Security parade cap"
+	desc = "Burn all Vulpkanins."
+	icon_state = "monkey_ss"
+	item_state = "hos_parade"
 	species_restricted = list("Monkey Stirlitz")
 	species_exception = list(/datum/species/monkey_stirlitz)

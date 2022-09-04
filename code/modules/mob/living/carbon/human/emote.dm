@@ -1014,12 +1014,25 @@
 					L.remove_status_effect(STATUS_EFFECT_HIGHFIVE)
 					return
 
+		if("siegheil")
+			if(restrained())
+				return
+			visible_message("<b>[name]</b> вскидывает руку от сердца к солнцу.")
+			playsound(loc, 'sound/effects/salute.ogg', 50, 0)
+			m_type = 1
+			for(var/mob/living/carbon/human/stirlitz_monkey/S in view(4))
+				if(S.restrained())
+					return
+				visible_message("<b>[S.name]</b> вскидывает руку в ответ <b>[name]</b>, радостно вереща.")
+				playsound(loc, 'sound/goonstation/voice/monkey_scream.ogg', 50, 0)
+				return
+
 		if("help")
 			var/emotelist = "aflap(s), airguitar, blink(s), blink(s)_r, blush(es), bow(s)-none/mob, burp(s), choke(s), chuckle(s), clap(s), collapse(s), cough(s), cry, cries, custom, dance, dap(s)-none/mob," \
 			+ " deathgasp(s), drool(s), eyebrow, fart(s), faint(s), flap(s), flip(s), frown(s), gasp(s), giggle(s), glare(s)-none/mob, grin(s), groan(s), grumble(s), grin(s)," \
 			+ " handshake-mob, hug(s)-none/mob, hem, highfive, johnny, jump, laugh(s), look(s)-none/mob, moan(s), mumble(s), nod(s), pale(s), point(s)-atom, quiver(s), raise(s), salute(s)-none/mob, scream(s), shake(s)," \
 			+ " shiver(s), shrug(s), sigh(s), signal(s)-#1-10,slap(s)-none/mob, smile(s),snap(s), sneeze(s), sniff(s), snore(s), stare(s)-none/mob, tremble(s), twitch(es), twitch(es)_s," \
-			+ " wave(s), whimper(s), wink(s), yawn(s)"
+			+ " wave(s), whimper(s), wink(s), yawn(s), siegheil"
 
 			switch(dna.species.name)
 				if("Diona")
